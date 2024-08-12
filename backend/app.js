@@ -10,8 +10,6 @@ const blog = require('./routes/Routes');
 const admin = require('./routes/Admin');
 
 
-
-
 app.use(cors());
 
 app.use(express.json());
