@@ -11,7 +11,6 @@ import Blogs from './pages/Blogs';
 import PrivateRoute from './components/PrivateRoute';
 import AdminCreate from './components/AdminCreate';
 import AdminEdit from './components/AdminEdit';
-import SingleBlog from './pages/SingleBlog';
 
 const App = () => {
   return (
@@ -24,11 +23,6 @@ const App = () => {
         <Route path="/blogs" element={
           <PrivateRoute>
             <Blogs />
-          </PrivateRoute>
-        } />
-        <Route path="/blog/:id" element={
-          <PrivateRoute>
-            <SingleBlog />
           </PrivateRoute>
         } />
         <Route path="/admin" element={

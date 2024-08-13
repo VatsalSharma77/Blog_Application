@@ -4,7 +4,7 @@ import { AuthContext } from "../AuthContext/AuthProvider";
 import axios from "axios";
 
 const Blogs = () => {
-  const { user } = useContext(AuthContext);
+  const { user,logout } = useContext(AuthContext);
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -24,6 +24,8 @@ const Blogs = () => {
 
   return (
     <div className="blogs-container">
+      <h1>Blogs</h1>
+      <button onClick={logout}>Logout</button>
       {user && user.isAdmin === true && (
         <div className="admin-link">
           <Link to="/admin">
@@ -49,9 +51,6 @@ const Blogs = () => {
                 />
               )}
               <p>{blog.content.substring(0, 100)}...</p>
-              <Link to={`/blog/${blog._id}`}>
-                <button className="read-more-button">Read More</button>
-              </Link>
             </div>
           ))}
         </div>
