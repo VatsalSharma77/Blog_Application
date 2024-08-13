@@ -7,7 +7,6 @@ const connectDB = require('./config/DBconnect');
 
 const user = require('./routes/User');
 const blog = require('./routes/Routes');
-const admin = require('./routes/Admin');
 
 
 app.use(cors());
@@ -16,9 +15,7 @@ app.use(express.json());
 
 app.use('/user', user);
 app.use('/blog', blog);
-app.use('/admin', admin);
 
-app.options('*', cors()); 
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
